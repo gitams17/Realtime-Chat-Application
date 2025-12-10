@@ -14,14 +14,16 @@ const messageSchema = new mongoose.Schema(
     },
     text: {
       type: String,
+
     },
     image: {
       type: String,
+      trim: true,
+      maxlength: 2000,
     },
   },
   { timestamps: true }
 );
-
 const Message = mongoose.model("Message", messageSchema);
 
 export default Message;
